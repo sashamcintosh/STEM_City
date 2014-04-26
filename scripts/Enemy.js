@@ -4,7 +4,7 @@ window.Enemy = (function(){
 	function Enemy(cWidth,cHeight){
 		
 		//ivars
-		this.active = true;
+		this.active = false;
 		this.age = Math.floor(Math.random() *128);
 		
 		this.canvasWidth = cWidth;
@@ -23,6 +23,7 @@ window.Enemy = (function(){
 	};
 	
 	//Enemy methods
+
 	Enemy.prototype.inBounds = function() {
 		return this.y <= this.canvasHeight-100;
 	};
@@ -52,6 +53,7 @@ window.Enemy = (function(){
 		//console.log(this.inBounds());
 		this.active = this.active && this.inBounds();
 		this.y += .3;
+
 		//console.log("this is updating");
 
 
@@ -60,7 +62,7 @@ window.Enemy = (function(){
 	
 	Enemy.prototype.explode = function() {
 		this.active = false;
-		//console.log("i died!");
+		console.log("i died!");
 	};
 	
 	return Enemy;
