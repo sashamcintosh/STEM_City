@@ -137,14 +137,13 @@ Your browser does not support the HTML5 canvas tag.
 		
 	}
 
-	function submit() { 
+	var submit = function() { 
 		console.log("onsubmit was hit!"); 
 		//inp.render();
 	}
 	
-	var sub = submit();
 
-	var input = new CanvasInput({  canvas: document.getElementById('canvas'), onsubmit: sub, fontSize: 18,  fontWeight: 'bold', x: 100, y: 550, width: 700, height: 100,  padding: 8,  borderWidth: 1,  borderColor: '#C0C0C0',  borderRadius: 3,  boxShadow: '0px 0px 0px #fff',  innerShadow: '0px 0px 0px rgba(0, 0, 0, 0)',  placeHolder: 'Kill those enemies!!'});
+	var input = new CanvasInput({  canvas: document.getElementById('canvas'), onsubmit: submit, fontSize: 18,  fontWeight: 'bold', x: 100, y: 550, width: 700, height: 100,  padding: 8,  borderWidth: 1,  borderColor: '#C0C0C0',  borderRadius: 3,  boxShadow: '0px 0px 0px #fff',  innerShadow: '0px 0px 0px rgba(0, 0, 0, 0)',  placeHolder: 'Kill those enemies!!'});
 
 
 
