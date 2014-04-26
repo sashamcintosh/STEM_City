@@ -10,7 +10,7 @@ window.Enemy = (function(){
 		this.canvasWidth = cWidth;
 		this.canvasHeight = cHeight-100;
 		
-		this.color = "#A2B";
+		this.color = "#000";
 		
 		this.x = this.canvasWidth / 4 + Math.random() * this.canvasWidth/2;
 		this.y = 0;
@@ -33,7 +33,7 @@ window.Enemy = (function(){
 		var halfH = this.height/2;
 		// use this if your image file has just 1 sprite
 		// ctx.drawImage(images["enemyImage"],this.x - halfW, this.y -halfH, this.width, this.height);
-		ctx.fillStyle = "#000000";
+		ctx.fillStyle = "#00FF00";
 		ctx.fillRect(this.x,this.y,10,10);
 
 		//draw from sprite sheet
