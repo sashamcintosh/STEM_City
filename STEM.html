@@ -2,41 +2,27 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8" />
-	<title>WIC Hacks 2014</title>
-	<!--link rel="stylesheet" type="text/css" href="styles.css" /-->
-	
 	<!--script src="titlepage.js" type = "text/javascript"></script-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
+<!-- SCRIPTS GO HERE -->
 
 <body>
 
-<canvas style="border:1px solid #c3c3c3;">testing!</canvas>
+<canvas id="canvas" width="800" height="650" style="border:1px solid #c3c3c3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
 
-<!-- SCRIPTS GO HERE -->
 <script>
-	//CONSTANTS
-	var CANVAS_WIDTH = 850;
-	var CANVAS_HEIGHT = 600;
-	
-	//Globals
-	var ctx;
-	
+
 	function init(){
-		var canvasElement = document.querySelector("canvas");
-		canvasElement.width = CANVAS_WIDTH;
-		canvasElement.height = CANVAS_HEIGHT;
-		
-		// 2D Rendering Context
-		ctx = canvasElement.getContext("2d");
-		
-		// testing
+		var c=document.getElementById("canvas");
+		var ctx=c.getContext("2d");
 		ctx.fillStyle="#FF0000";
 		ctx.fillRect(0,0,150,75);
-		
 	}
-	
+
+
 </script>
 
 </body>
