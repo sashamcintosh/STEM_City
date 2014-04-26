@@ -19,7 +19,6 @@ Your browser does not support the HTML5 canvas tag.
 </canvas>
 
 <script>
-
 	//CONSTANTS
 	var CANVAS_WIDTH = 800;
 	var CANVAS_HEIGHT = 650;
@@ -29,6 +28,8 @@ Your browser does not support the HTML5 canvas tag.
 	var lastTime = 0;
 	var enemies = [];
 
+	init();
+	
 	function init(){
 		var c=document.getElementById("canvas");
 		ctx=c.getContext("2d");
@@ -77,9 +78,12 @@ Your browser does not support the HTML5 canvas tag.
 			});
 			
 			if(Math.random() < ENEMY_PROBABILITY_PER_SECOND/200){
-				enemies.push(new Enemy(CANVAS_WIDTH,CANVAS_HEIGHT-100));
-				
+				enemies.push(new Enemy(CANVAS_WIDTH,CANVAS_HEIGHT));
+				console.log("New Enemy created! enemies.length = " +
+					enemies.length);
 			}
+
+			//handleCollisions();
 	}
 
 	function drawBackground(){
@@ -104,6 +108,20 @@ Your browser does not support the HTML5 canvas tag.
 			});
 	}
 
+	function wallCollides(a,yfloor){
+			return a.y > yfloor;
+	} //end collides
+
+	function handleCollisions(){
+		enemies.forEach(function(enemy){
+				if(wallCollides(enemy,CANVAS_HEIGHT-100)){
+					enemy.explode();
+					//score -= 5;
+				}
+			});
+	}
+
+
 
 
 	///HELPER FUNCTIONS
@@ -120,12 +138,9 @@ Your browser does not support the HTML5 canvas tag.
 			return 1/fps;
 		
 		}
-	var submit = function() { console.log("onsubmit was hit!"); }
-	
-		
-	var input = new CanvasInput({  canvas: document.getElementById('canvas'), onsubmit: submit, fontSize: 18,  fontWeight: 'bold', x: 100, y: 550, width: 700, height: 100,  padding: 8,  borderWidth: 1,  borderColor: '#C0C0C0',  borderRadius: 3,  boxShadow: '0px 0px 0px #fff',  innerShadow: '0px 0px 0px rgba(0, 0, 0, 0)',  placeHolder: 'Kill those enemies!!'});
-	
-	
+	var input = new CanvasInput({  canvas: document.getElementById('canvas'),  fontSize: 18,  fontWeight: 'bold', x: 100, y: 550, width: 700, height: 100,  padding: 8,  borderWidth: 1,  borderColor: '#C0C0C0',  borderRadius: 3,  boxShadow: '0px 0px 0px #fff',  innerShadow: '0px 0px 0px rgba(0, 0, 0, 0)',  placeHolder: 'Kill those enemies!!'});
+
+
 </script>
 
 </body>
