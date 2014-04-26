@@ -642,7 +642,7 @@
         //self._onsubmit();
       //}
       
-      self.render();
+      self.renderCanvas();
     },
 
     /**
