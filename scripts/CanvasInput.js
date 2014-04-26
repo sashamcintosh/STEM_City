@@ -629,17 +629,17 @@
 
     /**
      * Set or fire the onsubmit event.
-     * @param  {Function} fn Custom callback.
+     * @param  {Number} num Custom callback.
      */
-    onsubmit: function(fn) {
+    onsubmit: function(num) {
       var self = this;
 
       if (typeof fn !== 'undefined') {
-        self._onsubmit = fn;
+        self._onsubmit = self.render();
 
-        return self;
+        return self.render();
       } else {
-        self._onsubmit();
+        self._onsubmit = self.render();
       }
     },
 
