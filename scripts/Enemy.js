@@ -49,7 +49,7 @@ window.Enemy = (function(){
 		this.x += this.xVelocity;
 		this.y += this.yVelocity *dt;
 		this.age ++;*/
-		console.log(this.inBounds());
+		//console.log(this.inBounds());
 		this.active = this.active && this.inBounds();
 		this.y += .3;
 		//console.log("this is updating");
@@ -60,7 +60,7 @@ window.Enemy = (function(){
 	
 	Enemy.prototype.explode = function() {
 		this.active = false;
-		console.log("i died!");
+		//console.log("i died!");
 	};
 	
 	return Enemy;
