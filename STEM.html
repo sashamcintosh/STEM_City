@@ -5,6 +5,26 @@
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
+<!-- SCRIPTS GO HERE -->
+<script>
+
+	//Globals
+	var ctx;
+	
+	function init(){
+		var canvasElement = document.querySelector("canvas");
+		canvasElement.width = 850;
+		canvasElement.height = 600;
+		
+		// 2D Rendering Context
+		ctx = canvasElement.getContext("2d");
+		
+		// testing
+		ctx.fillStyle="#FF0000";
+		ctx.fillRect(0,0,150,75);
+	}
+	
+</script>
 
 
 <body>
