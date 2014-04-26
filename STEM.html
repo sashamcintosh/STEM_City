@@ -75,7 +75,7 @@ Your browser does not support the HTML5 canvas tag.
 				return enemy.active;
 			});
 			
-			if(Math.random() < ENEMY_PROBABILITY_PER_SECOND/60){
+			if(Math.random() < ENEMY_PROBABILITY_PER_SECOND/120){
 				enemies.push(new Enemy(CANVAS_WIDTH,CANVAS_HEIGHT-100));
 				console.log("New Enemy created! enemies.length = " +
 					enemies.length);
