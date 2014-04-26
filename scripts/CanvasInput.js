@@ -634,13 +634,15 @@
     onsubmit: function(fn) {
       var self = this;
 
-      if (typeof fn !== 'undefined') {
-        self._onsubmit = fn;
+      //if (typeof fn !== 'undefined') {
+        //self._onsubmit = fn;
 
-        return self;
-      } else {
-        self._onsubmit();
-      }
+        //return self;
+      //} else {
+        //self._onsubmit();
+      //}
+      
+      self.render();
     },
 
     /**
