@@ -65,19 +65,21 @@ Your browser does not support the HTML5 canvas tag.
 	///HELPER FUNCTIONS
 
 	function calculateDeltaTime() {
-			//whats with (+ new Date)?
-			// + calls Date.valueOf(), which converts it from an object to a 
-			//primitive (number of milliseconds since January 1, 1970)
-			var now,fps;
-			now = (+new Date);
-			fps = 1000/(now - lastTime);
-			fps = clamp(fps,12,60);
-			lastTime = now;
-			return 1/fps;
+		//whats with (+ new Date)?
+		// + calls Date.valueOf(), which converts it from an object to a 
+		//primitive (number of milliseconds since January 1, 1970)
+		var now,fps;
+		now = (+new Date);
+		fps = 1000/(now - lastTime);
+		fps = clamp(fps,12,60);
+		lastTime = now;
+		return 1/fps;
 		
 	}
 	
-	function 
+	function textbox(){
+		var input = new CanvasInput({  canvas: document.getElementById('canvas')});	
+	}
 
 
 </script>
