@@ -66,7 +66,7 @@ window.Enemy = (function(){
 	};
 	
 	Enemy.prototype.deletedCode = function(code){
-		return deletionCode == code;
+		return this.deletionCode == code;
 	}
 	
 	return Enemy;
