@@ -7,14 +7,17 @@
 </head>
 <!-- SCRIPTS GO HERE -->
 <script>
-
+	//CONSTANTS
+	var CANVAS_WIDTH = 850;
+	var CANVAS_HEIGHT = 600;
+	
 	//Globals
 	var ctx;
 	
 	function init(){
 		var canvasElement = document.querySelector("canvas");
-		canvasElement.width = 850;
-		canvasElement.height = 600;
+		canvasElement.width = CANVAS_WIDTH;
+		canvasElement.height = CANVAS_HEIGHT;
 		
 		// 2D Rendering Context
 		ctx = canvasElement.getContext("2d");
@@ -22,6 +25,7 @@
 		// testing
 		ctx.fillStyle="#FF0000";
 		ctx.fillRect(0,0,150,75);
+		
 	}
 	
 </script>
