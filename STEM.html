@@ -131,7 +131,7 @@ Your browser does not support the HTML5 canvas tag.
 	
 	function handleTyping(line){
 		//checks the closest enemies if they have that line of code that was inputted
-		
+		console.log(line);
 	}
 
 
@@ -152,7 +152,10 @@ Your browser does not support the HTML5 canvas tag.
 		}
 
 	var submit = function() { 
-		console.log(input._value); 
+		console.log(input._value);
+		
+		handleTyping(input._value);
+		input._value=''
 	}
 
 
