@@ -27,13 +27,13 @@ Your browser does not support the HTML5 canvas tag.
 	var ctx;
 	var lastTime = 0;
 	var enemies = [];
-
+	
 	function init(){
 		var c=document.getElementById("canvas");
 		ctx=c.getContext("2d");
 		//ctx.fillStyle="#FF0000";
 		//ctx.fillRect(0,0,150,75);//things to do before we begin the game
-		//console.log("test");
+		console.log("test");
 
 		startGameOne();
 	}
@@ -69,19 +69,20 @@ Your browser does not support the HTML5 canvas tag.
 		//Enemies
 			enemies.forEach(function(enemy){
 				enemy.update(dt);
+				console.log("enemy place = " + enemy.place);
 			});
 			
 			enemies.filter(function(enemy){
 				return enemy.active;
 			});
 			
-			if(Math.random() < ENEMY_PROBABILITY_PER_SECOND/200){
+			if(enemies.length<2 && Math.random() < ENEMY_PROBABILITY_PER_SECOND/200){
 				enemies.push(new Enemy(CANVAS_WIDTH,CANVAS_HEIGHT));
-			//	console.log("New Enemy created! enemies.length = " +
-			//		enemies.length);
+				console.log("New Enemy created! enemies.length = " +
+					enemies.length);
 			}
 
-			//handleCollisions();
+			handleCollisions();
 	}
 
 	function drawBackground(){
@@ -111,12 +112,20 @@ Your browser does not support the HTML5 canvas tag.
 	} //end collides
 
 	function handleCollisions(){
-		enemies.forEach(function(enemy){
+		/*enemies.forEach(function(enemy){
 				if(wallCollides(enemy,CANVAS_HEIGHT-100)){
-					enemy.explode();
+					//enemy.explode();
+					enemies.splice()
 					//score -= 5;
 				}
-			});
+			});*/
+		for(var i=0;i<enemies.length;i++){
+			if(wallCollides(enemies[i],CANVAS_HEIGHT-110)){
+				//enemy.explode;
+				enemies.splice(enemies[i],1);
+
+			}
+		}
 	}
 
 
@@ -135,15 +144,11 @@ Your browser does not support the HTML5 canvas tag.
 			lastTime = now;
 			return 1/fps;
 		
-	}
+		}
+	var submit = function() { console.log(input._value); }
 
-	var submit = function() { 
-		console.log(input._value); 
-	}
-	
 
 	var input = new CanvasInput({  canvas: document.getElementById('canvas'), onsubmit: submit, fontSize: 18,  fontWeight: 'bold', x: 100, y: 550, width: 700, height: 100,  padding: 8,  borderWidth: 1,  borderColor: '#C0C0C0',  borderRadius: 3,  boxShadow: '0px 0px 0px #fff',  innerShadow: '0px 0px 0px rgba(0, 0, 0, 0)',  placeHolder: 'Kill those enemies!!'});
-
 
 
 </script>
