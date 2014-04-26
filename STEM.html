@@ -95,14 +95,14 @@ Your browser does not support the HTML5 canvas tag.
 			
 			//Fill entire ctx with gradient
 			ctx.fillStyle = grad; //before we were using solid colors*/
-			ctx.fillStyle = "#FFFFFF";
+			ctx.fillStyle = "#000000";
 			ctx.fillRect(0,0,CANVAS_WIDTH,CANVAS_HEIGHT-100);
 	}
 
 	function drawSprites(){
 		//console.log("drawing sprites");
 		enemies.forEach(function(enemy) {
-				ctx.fillStyle = "#000000";
+				ctx.fillStyle = "#00FF00";
 				enemy.draw(ctx);
 			});
 	}
