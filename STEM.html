@@ -27,6 +27,7 @@ Your browser does not support the HTML5 canvas tag.
 	var ctx;
 	var lastTime = 0;
 	var enemies = [];
+	var health = 10;
 	
 	function init(){
 		var c=document.getElementById("canvas");
@@ -122,6 +123,7 @@ Your browser does not support the HTML5 canvas tag.
 		for(var i=0;i<enemies.length;i++){
 			if(wallCollides(enemies[i],CANVAS_HEIGHT-110)){
 				//enemy.explode;
+				removeHealth();
 				enemies.splice(enemies[i],1);
 
 			}
@@ -132,6 +134,16 @@ Your browser does not support the HTML5 canvas tag.
 	function handleTyping(line){
 		//checks the closest enemies if they have that line of code that was inputted
 		console.log(line);
+	}
+	
+	function removeHealth(){
+		health--;
+		console.log("health = " + health);
+	}
+
+	function addHealth(){
+		health++;
+		console.log("health = "+ health);
 	}
 
 
