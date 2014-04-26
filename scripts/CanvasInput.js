@@ -631,7 +631,7 @@
      * Set or fire the onsubmit event.
      * @param  {Number} num Custom callback.
      */
-    onsubmit: function(num) {
+    onsubmit: function(fn) {
       var self = this;
 
       if (typeof fn !== 'undefined') {
