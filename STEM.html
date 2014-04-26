@@ -41,27 +41,61 @@ Your browser does not support the HTML5 canvas tag.
 		var dt = calculateDeltaTime();
 			
 			//if(!paused) {
-				
 				// 1)update sprites
-				//update(dt);
+				update(dt);
 				
 				// 2)draw background
-				//drawBackground();
+				drawBackground();
 				
 				// 3)draw everything else
-				//drawSprites();
+				drawSprites();
 			//} //end if
 			
 			//tell the browser to let us know when its ready to animate -
 			//which is usually in 1/60 of a second
 			//animate is the function that will be "called back"
 			window.requestAnimFrame(animate);
-			
-			//console.log("animating...");
 	}
 	
 
+	function update(dt){
+		//Enemies
+			enemies.forEach(function(enemy){
+				enemy.update(dt);
+			});
+			
+			enemies.filter(function(enemy){
+				return enemy.active;
+			});
+			
+			if(Math.random() < ENEMY_PROBABILITY_PER_SECOND/60){
+				enemies.push(new Enemy(CANVAS_WIDTH,CANVAS_HEIGHT));
+				console.log("New Enemy created! enemies.length = " +
+					enemies.length);
+			}
+	}
 
+	function drawBackground(){
+		//console.log("drawing background");
+		/*var grad = ctx.createLinearGradient(0,0,0,CANVAS_HEIGHT);
+			grad.addColorStop(0,"#993D7A"); //top
+			grad.addColorStop(.40,"#CC3300"); //40% down
+			grad.addColorStop(.85, "blue"); //85% down
+			grad.addColorStop(1,"#aa44ff"); //bottom
+			
+			//Fill entire ctx with gradient
+			ctx.fillStyle = grad; //before we were using solid colors*/
+		ctx.fillStyle = "#FFFFFF";
+		ctx.fillRect(0,0,CANVAS_WIDTH,CANVAS_HEIGHT);
+	}
+
+	function drawSprites(){
+		//console.log("drawing sprites");
+		enemies.forEach(function(enemy) {
+				ctx.fillStyle = "#000000";
+				enemy.draw(ctx);
+			});
+	}
 
 
 	///HELPER FUNCTIONS
