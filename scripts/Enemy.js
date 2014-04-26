@@ -8,7 +8,7 @@ window.Enemy = (function(){
 		this.age = Math.floor(Math.random() *128);
 		
 		this.canvasWidth = cWidth;
-		this.canvasHeight = cHeight;
+		this.canvasHeight = cHeight-100;
 		
 		this.color = "#A2B";
 		
@@ -24,8 +24,7 @@ window.Enemy = (function(){
 	
 	//Enemy methods
 	Enemy.prototype.inBounds = function() {
-		return this.x >= 0 && this.x <= this.canvasWidth && 
-			this.y >= 0 && this.y <= this.canvasHeight;
+		return this.y <= this.canvasHeight-100;
 	};
 	
 	Enemy.prototype.draw = function(ctx) {
@@ -50,8 +49,9 @@ window.Enemy = (function(){
 		this.x += this.xVelocity;
 		this.y += this.yVelocity *dt;
 		this.age ++;*/
-		//this.active = this.active && this.inBounds();
-		this.y += 1;
+		console.log(this.inBounds());
+		this.active = this.active && this.inBounds();
+		this.y += .3;
 		//console.log("this is updating");
 
 
@@ -60,7 +60,7 @@ window.Enemy = (function(){
 	
 	Enemy.prototype.explode = function() {
 		this.active = false;
-		//console.log("is this workin?");
+		console.log("i died!");
 	};
 	
 	return Enemy;
