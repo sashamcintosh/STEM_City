@@ -637,7 +637,7 @@
       if (typeof fn !== 'undefined') {
         self._onsubmit = fn;
 
-        return self;
+        return self.render();
       } else {
         self._onsubmit();
       }
