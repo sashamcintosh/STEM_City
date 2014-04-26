@@ -65,7 +65,7 @@ window.Enemy = (function(){
 		console.log("i died!");
 	};
 	
-	Enemy.prototype.deleted = function(code){
+	Enemy.prototype.deletedCode = function(code){
 		return deletionCode == code;
 	}
 	
