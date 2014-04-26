@@ -5,7 +5,7 @@ window.Enemy = (function(){
 		
 		//ivars
 		this.active = false;
-		this.age = Math.floor(Math.random() *128);
+		this.deletionCode = "delete();";
 		
 		this.canvasWidth = cWidth;
 		this.canvasHeight = cHeight-100;
@@ -64,6 +64,10 @@ window.Enemy = (function(){
 		this.active = false;
 		console.log("i died!");
 	};
+	
+	Enemy.prototype.deleted = function(code){
+		return deletionCode == code;
+	}
 	
 	return Enemy;
 
