@@ -135,8 +135,19 @@ Your browser does not support the HTML5 canvas tag.
 	function handleTyping(line){
 		//checks the closest enemies if they have that line of code that was inputted
 		for(var i=0;i<enemies.length;i++){
-			if(enemies[i].deletedCode(line)){
+			if(enemies[i].deletedCode(line) == 0){
 				//enemy.explode;
+				removeHealth();
+				enemies.splice(enemies[i],1);
+			}
+			if(enemies[i].deletedCode(line) == 1){
+				//enemy.explode;
+				removeHealth();
+				enemies.splice(enemies[i],1);
+			}
+			if(enemies[i].deletedCode(line) == 2){
+				//enemy.explode;
+				addHealth();
 				enemies.splice(enemies[i],1);
 			}
 		}
