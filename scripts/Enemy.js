@@ -47,7 +47,7 @@ window.Enemy = (function(){
 		if (this.type == 2) {
 			ctx.fillStyle = "#FF99CC";
 		}
-		ctx.fillRect(this.x,this.y,10,10);
+		ctx.fillRect(this.x,this.y,40,40);
 
 		//draw from sprite sheet
 		/*ctx.drawImage(
