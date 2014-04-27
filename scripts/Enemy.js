@@ -11,6 +11,10 @@ window.Enemy = (function(){
 		this.canvasHeight = cHeight-100;
 		
 		this.color = "#000";
+		this.type = Math.floor( Math.random() * 3 );
+		// 0 = green enemy
+		// 1 = blue enemy
+		// 2 = pink health
 		
 		this.x = this.canvasWidth / 4 + Math.random() * this.canvasWidth/2;
 		this.y = 0;
@@ -33,7 +37,16 @@ window.Enemy = (function(){
 		var halfH = this.height/2;
 		// use this if your image file has just 1 sprite
 		// ctx.drawImage(images["enemyImage"],this.x - halfW, this.y -halfH, this.width, this.height);
-		ctx.fillStyle = "#00FF00";
+		
+		if (this.type == 0) {
+			ctx.fillStyle = "#00FF00";
+		}
+		if (this.type == 1) {
+			ctx.fillStyle = "#0000FF";
+		}	
+		if (this.type == 2) {
+			ctx.fillStyle = "#FF99CC";
+		}
 		ctx.fillRect(this.x,this.y,10,10);
 
 		//draw from sprite sheet
