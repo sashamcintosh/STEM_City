@@ -11,7 +11,12 @@ window.Enemy = (function(){
 		this.canvasHeight = cHeight-100;
 		
 		this.color = "#000";
-		this.type = Math.floor( Math.random() * 3 );
+		this.rand = Math.random() * 6;
+		
+		if (this.rand <= 6 && this.rand > 5) { this.type = 2; }
+		if (this.rand <= 5 && this.rand > 3) { this.type = 2; }
+		if (this.rand <= 3 && this.rand > 0) { this.type = 2; }
+
 		// 0 = green enemy
 		// 1 = blue enemy
 		// 2 = pink health
