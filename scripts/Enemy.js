@@ -5,7 +5,7 @@ window.Enemy = (function(){
 		
 		//ivars
 		this.active = false;
-		this.deletionCode = "delete();";
+		this.deletionCode = ["delete();", "delete(virus);", "health++;"];
 		
 		this.canvasWidth = cWidth;
 		this.canvasHeight = cHeight-100;
@@ -79,6 +79,15 @@ window.Enemy = (function(){
 	};
 	
 	Enemy.prototype.deletedCode = function(code){
+		if (this.type == 0) {
+			return this.deletionCode[0] == code;	
+		}
+		if (this.type == 1) {
+			return this.deletionCode[0] == code;	
+		}
+		if (this.type == 2) {
+			return this.deletionCode[0] == code;	
+		}
 		return this.deletionCode == code;
 	}
 	
