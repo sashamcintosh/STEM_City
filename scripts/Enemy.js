@@ -5,7 +5,7 @@ window.Enemy = (function(){
 		
 		//ivars
 		this.active = false;
-		this.deletionCode = ["delete();", "delete(virus);", "health++;"];
+		this.deletionCode = ["delete();", "delete('virus');", "health++;"];
 		
 		this.canvasWidth = cWidth;
 		this.canvasHeight = cHeight-100;
