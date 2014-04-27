@@ -27,8 +27,8 @@ Your browser does not support the HTML5 canvas tag.
 	var ctx;
 	var lastTime = 0;
 	var enemies = [];
-	var health = 10;
-	var dt;
+	var health = 5;
+	var score = 0;
 	
 	function init(){
 		var c=document.getElementById("canvas");
@@ -37,10 +37,6 @@ Your browser does not support the HTML5 canvas tag.
 		//ctx.fillRect(0,0,150,75);//things to do before we begin the game
 		//console.log("test");
 
-	//	titleScreen();
-		
-	//	animate();
-		
 		startGameOne();
 	}
 	
@@ -50,9 +46,9 @@ Your browser does not support the HTML5 canvas tag.
 	}
 	
 	function animate(){
-		dt = calculateDeltaTime();
+		var dt = calculateDeltaTime();
 			
-		//if(!paused) {
+			//if(!paused) {
 				// 1)update sprites
 				update(dt);
 				
@@ -61,9 +57,7 @@ Your browser does not support the HTML5 canvas tag.
 				
 				// 3)draw everything else
 				drawSprites();
-		//	}else{
-				menuUpdate();
-		//	} //end if
+			//} //end if
 			
 			//tell the browser to let us know when its ready to animate -
 			//which is usually in 1/60 of a second
@@ -71,93 +65,6 @@ Your browser does not support the HTML5 canvas tag.
 			window.requestAnimFrame(animate);
 			
 			//console.log("animating...");
-			window.addEventListener("keydown", function(e){
-				console.log("keydown=" + e.keyCode);
-				keydown[e.keyCode] = true;
-				});
-
-			window.addEventListener("keyup", function(e){
-				console.log("keyup=" + e.keyCode);
-				keydown[e.keyCode] = false;
-				//player.counter =0;
-				});
-	}
-	
-	function titleScreen(){
-		ctx.fillStyle = "#ffffff";
-		ctx.fillRect(0,0,CANVAS_WIDTH,CANVAS_HEIGHT);
-		
-		ctx.font = "30px Arial";
-		ctx.fillStyle = "#000000";
-		ctx.fillText("STEM City",390,50);
-		ctx.fillText("Press ENTER to start",390,150);
-		ctx.fillText("Press C to see Credits",390,300);
-
-	}
-	
-	function menuUpdate(dt)
-	{
-		
-		
-		if(keydown[13]){
-			console.log("game has started");
-			characterUpdate(dt);
-		}
-		if(keydown[67]){
-			showCredits(dt);
-			console.log("Credits shown");
-		}
-	}
-	
-	function showCredits(dt)
-	{
-		ctx.fillStyle = "#ffffff";
-		ctx.fillRect(0,0,CANVAS_WIDTH,CANVAS_HEIGHT);
-		
-		ctx.font = "30px Arial";
-		ctx.fillStyle = "#000000";
-		ctx.fillText("Team Awesome",390,50);
-		ctx.fillText("Julienne Ablay",390, 150);
-		ctx.fillText("Michaela Butler",390,250);
-		ctx.fillText("Susan Heilman",390,350);
-		ctx.fillText("Lianne McIntosh",390,450);
-		ctx.fillText("Sasha McIntosh",390,550);
-		ctx.fillText("Press B to go back");
-		
-		if(keydown[66])
-		{
-			menuUpdate(dt);
-		}
-		
-	}
-	
-	function characterUpdate(dt)
-	{
-		ctx.fillStyle = "#ffffff";
-		ctx.fillRect(0,0,CANVAS_WIDTH,CANVAS_HEIGHT);
-		
-		ctx.font = "30px Arial";
-		ctx.fillStyle = "#000000";
-		ctx.fillText("Press T to play as Tina",390,50);
-		
-		if(keydown[84]){
-			console.log("Tech Bio shown");
-			techBio();
-		}
-	}
-	
-	function techBio()
-	{
-		ctx.fillStyle = "#ffffff";
-		ctx.fillRect(0,0,CANVAS_WIDTH,CANVAS_HEIGHT);
-		
-		
-		
-		if(keydown[80])
-		{
-			console.log("Start Game");
-			paused = false;
-		}
 	}
 
 	function update(dt){
@@ -286,4 +193,3 @@ Your browser does not support the HTML5 canvas tag.
 </body>
 
 </html>
-
