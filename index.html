@@ -126,7 +126,7 @@ Your browser does not support the HTML5 canvas tag.
 				}
 			});*/
 		for(var i=0;i<enemies.length;i++){
-			if(wallCollides(enemies[i],CANVAS_HEIGHT-enemies[i].height)){
+			if(wallCollides(enemies[i],CANVAS_HEIGHT-100-enemies[i].height)){
 				//enemy.explode;
 				removeHealth();
 				enemies.splice(enemies[i],1);
