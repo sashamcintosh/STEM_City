@@ -88,7 +88,6 @@ window.Enemy = (function(){
 		if (this.type == 2) {
 			return this.deletionCode[2] == code;	
 		}
-		return this.deletionCode == code;
 	}
 	
 	return Enemy;
