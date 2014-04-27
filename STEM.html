@@ -37,9 +37,11 @@ Your browser does not support the HTML5 canvas tag.
 		//ctx.fillRect(0,0,150,75);//things to do before we begin the game
 		//console.log("test");
 
-		titleScreen();
+	//	titleScreen();
 		
-		animate();
+	//	animate();
+		
+		startGameOne();
 	}
 	
 	//actually starting the game (FIRST ONE IS THE TECH SHOOTER GAME)
@@ -50,7 +52,7 @@ Your browser does not support the HTML5 canvas tag.
 	function animate(){
 		dt = calculateDeltaTime();
 			
-			if(!paused) {
+		//if(!paused) {
 				// 1)update sprites
 				update(dt);
 				
@@ -59,9 +61,9 @@ Your browser does not support the HTML5 canvas tag.
 				
 				// 3)draw everything else
 				drawSprites();
-			}else{
+		//	}else{
 				menuUpdate();
-			} //end if
+		//	} //end if
 			
 			//tell the browser to let us know when its ready to animate -
 			//which is usually in 1/60 of a second
