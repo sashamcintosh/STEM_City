@@ -6,6 +6,7 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 	<script src="scripts/utils.js"></script>
 	<script src="scripts/CanvasInput.js"></script>
+	<script src="styles.css"></script>
 
 	<!--game scripts-->
 	<script src="scripts/Enemy.js"></script>
@@ -21,7 +22,7 @@ Your browser does not support the HTML5 canvas tag.
 <script>
 	//CONSTANTS
 	var CANVAS_WIDTH = 800;
-	var CANVAS_HEIGHT = 650;
+	var CANVAS_HEIGHT = 600;
 	var ENEMY_PROBABILITY_PER_SECOND = 1.0;
 
 	var ctx;
@@ -123,7 +124,7 @@ Your browser does not support the HTML5 canvas tag.
 				}
 			});*/
 		for(var i=0;i<enemies.length;i++){
-			if(wallCollides(enemies[i],CANVAS_HEIGHT-110)){
+			if(wallCollides(enemies[i],CANVAS_HEIGHT-enemies[i].height)){
 				//enemy.explode;
 				removeHealth();
 				enemies.splice(enemies[i],1);
