@@ -15,14 +15,14 @@
 
 <body onload="init();">
 
-<canvas id="canvas" width="800" height="650" style="border:1px solid #c3c3c3;">
+<canvas id="canvas" width="800" height="600" style="border:1px solid #c3c3c3;">
 Your browser does not support the HTML5 canvas tag.
 </canvas>
 
 <script>
 	//CONSTANTS
-	var CANVAS_WIDTH = 800;
-	var CANVAS_HEIGHT = 600;
+	var CANVAS_WIDTH = canvas.width;
+	var CANVAS_HEIGHT = canvas.height;
 	var ENEMY_PROBABILITY_PER_SECOND = 1.0;
 
 	var ctx;
@@ -138,10 +138,10 @@ Your browser does not support the HTML5 canvas tag.
 	function showScore(){
 		
 		ctx.fillStyle = "#FFF";
-		ctx.fillRect(0,550,100,CANVAS_HEIGHT);
+		ctx.fillRect(0,CANVAS_HEIGHT-100,100,CANVAS_HEIGHT);
 		ctx.fillStyle = "#000"
-		ctx.fillText("Score: " + score, 0,600);
-		ctx.fillText("Health: " + health, 0,630);
+		ctx.fillText("Score: " + score, 0,CANVAS_HEIGHT-50);
+		ctx.fillText("Health: " + health, 0,CANVAS_HEIGHT-20);
 
 	}
 	
@@ -170,12 +170,12 @@ Your browser does not support the HTML5 canvas tag.
 	
 	function removeHealth(){
 		health--;
-		console.log("health = " + health);
+		//console.log("health = " + health);
 	}
 
 	function addHealth(){
 		health++;
-		console.log("health = "+ health);
+		//console.log("health = "+ health);
 	}
 
 
