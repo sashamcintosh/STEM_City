@@ -34,7 +34,7 @@ window.Enemy = (function(){
 	//Enemy methods
 
 	Enemy.prototype.inBounds = function() {
-		return this.y <= this.canvasHeight-100;
+		return this.y <= this.canvasHeight-100-this.height;
 	};
 	
 	Enemy.prototype.draw = function(ctx) {
