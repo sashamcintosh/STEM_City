@@ -83,10 +83,10 @@ window.Enemy = (function(){
 			return this.deletionCode[0] == code;	
 		}
 		if (this.type == 1) {
-			return this.deletionCode[0] == code;	
+			return this.deletionCode[1] == code;	
 		}
 		if (this.type == 2) {
-			return this.deletionCode[0] == code;	
+			return this.deletionCode[2] == code;	
 		}
 		return this.deletionCode == code;
 	}
