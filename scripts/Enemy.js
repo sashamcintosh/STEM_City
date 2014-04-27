@@ -80,7 +80,7 @@ window.Enemy = (function(){
 	
 	Enemy.prototype.deletedCode = function(code){
 		if (this.type == 0) {
-			return this.deletionCode[0] == code;	
+			if( this.deletionCode[0] == code ){ return 0; }	
 		}
 		if (this.type == 1) {
 			return this.deletionCode[1] == code;	
