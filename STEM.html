@@ -139,7 +139,9 @@ Your browser does not support the HTML5 canvas tag.
 		ctx.fillStyle = "#FF0";
 		ctx.fillRect(0,650,100,CANVAS_HEIGHT-100);
 		ctx.fillStyle = "#000"
-		ctx.fillText("Score: " + score + "\nHealth: " + health, 0,600);
+		ctx.fillText("Score: " + score, 0,600);
+		ctx.fillText("Health: " + health, 0,630);
+
 	}
 	
 	function handleTyping(line){
