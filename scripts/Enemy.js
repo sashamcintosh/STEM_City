@@ -27,7 +27,7 @@ window.Enemy = (function(){
 		this.yVelocity = 200;
 		this.amplitude = getRandom(1.5,7.0);
 		
-		this.width = 34;
+		this.width = 40;
 		this.height = 40;
 	};
 	
@@ -52,7 +52,7 @@ window.Enemy = (function(){
 		if (this.type == 2) {
 			ctx.fillStyle = "#FF99CC";
 		}
-		ctx.fillRect(this.x,this.y,40,40);
+		ctx.fillRect(this.x,this.y,this.width,this.height);
 
 		//draw from sprite sheet
 		/*ctx.drawImage(
