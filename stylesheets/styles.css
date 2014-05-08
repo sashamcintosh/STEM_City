@@ -261,4 +261,6 @@ canvas {
     margin-right: auto;
     display: block;
     border: 1px solid #c3c3c3;
+    width: 800px;
+    height: 600px;
 }
