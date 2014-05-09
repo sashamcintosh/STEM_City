@@ -160,7 +160,7 @@ footer ul a strong {
 }
 
 section {
-  width:800px;
+  width:600px;
   float:right;
   padding-bottom:50px;
 }
@@ -183,7 +183,7 @@ footer {
   bottom:50px;
 }
 
-@media print, screen and (max-width: 720px) {
+@media print, screen and (max-width: 750px) {
   
   div.wrapper {
     width:auto;
